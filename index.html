@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQLUX BLUEPRINTS | Futuristic Graphic Design</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0aff9d',
+                        secondary: '#00e1ff',
+                        dark: '#0a0a1a',
+                        darker: '#050510',
+                    },
+                    fontFamily: {
+                        sans: ['"Rajdhani"', 'sans-serif'],
+                        mono: ['"Major Mono Display"', 'monospace'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 5s ease-in-out infinite',
+                        'text-glow': 'text-glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'text-glow': {
+                            '0%': { 'text-shadow': '0 0 5px rgba(10, 255, 157, 0.5)' },
+                            '100%': { 'text-shadow': '0 0 20px rgba(10, 255, 157, 1)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            background-color: #0a0a1a;
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .glass-effect {
+            background: rgba(5, 5, 16, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(10, 255, 157, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #0aff9d, #00e1ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(10, 255, 157, 0.3);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(10, 255, 157, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10, 255, 157, 0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        
+        .cursor-trail {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(10, 255, 157, 0.8) 0%, rgba(10, 255, 157, 0) 70%);
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+    </style>
+ </head>
+ <body class="font-sans grid-pattern">
+    <!-- Cursor Trail Effect -->
+    <div id="cursor-trail" class="cursor-trail"></div>
+
+    <!-- Floating Particles -->
+    <div id="particles" class="fixed inset-0 overflow-hidden pointer-events-none z-0"></div>
+
+    <!-- Navigation -->
+    <nav class="glass-effect fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text select-none">AQL<span class="font-mono">//</span>UX</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#work" class="hover:text-primary transition-all duration-300 uppercase text-sm tracking-widest">Work</a>
+                    <a href="#about" class="hover:text-primary transition-all duration-300 uppercase text-sm tracking-widest">About</a>
+                    <a href="#process" class="hover:text-primary transition-all duration-300 uppercase text-sm tracking-widest">Process</a>
+                    <a href="#contact" class="hover:text-primary transition-all duration-300 uppercase text-sm tracking-widest">Contact</a>
+                </div>
+                <button class="md:hidden focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-xl text-primary"></i>
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div class="md:hidden hidden py-4" id="mobile-menu">
+                <a href="#work" class="block py-2 hover:text-primary transition-all duration-300 uppercase text-sm tracking-widest">Work</a>
+                <a href="#about" class="block py-2 hover:text-primary transition-all duration-300 uppercase text-sm tracking-widest">About</a>
+                <a href="#process" class="block py-2 hover:text-primary transition-all duration-300 uppercase text-sm tracking-widest">Process</a>
+                <a href="#contact" class="block py-2 hover:text-primary transition-all duration-300 uppercase text-sm tracking-widest">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center relative overflow-hidden pt-20">
+        <div class="container mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between">
+            <div class="md:w-1/2 mb-16 md:mb-0">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    DESIGNING THE <span class="gradient-text">FUTURE</span><br> OF VISUALS
+                </h1>
+                <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                    I craft boundary-pushing digital experiences that merge organic aesthetics with cutting-edge technology.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#work" class="bg-primary text-dark font-bold px-8 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300 flex items-center">
+                        <span>View Work</span>
+                        <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="border border-primary text-primary font-bold px-8 py-3 rounded-full hover:bg-primary hover:bg-opacity-10 transition-all duration-300">
+                        Let's Talk
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative">
+                <div class="relative max-w-md mx-auto">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-50 blur-xl"></div>
+                    <div class="relative bg-dark rounded-xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                             alt="Design Work Sample" 
+                             class="w-full h-auto object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-primary text-xl"></i>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="py-12 bg-darker">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center text-gray-400 uppercase text-sm tracking-widest mb-8">COLLABORATED WITH</h2>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-80">
+                <div class="text-3xl font-bold gradient-text">NVIDIA</div>
+                <div class="text-3xl font-bold gradient-text">ADOBE</div>
+                <div class="text-3xl font-bold gradient-text">SONY</div>
+                <div class="text-3xl font-bold gradient-text">NETFLIX</div>
+                <div class="text-3xl font-bold gradient-text">SPOTIFY</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4">SELECTED <span class="gradient-text">WORKS</span></h2>
+                    <p class="max-w-xl text-gray-400">A curated collection of projects that showcase my design philosophy and technical approach.</p>
+                </div>
+                <a href="#" class="hidden md:flex items-center text-primary hover:text-secondary transition-all duration-300">
+                    <span>VIEW ALL PROJECTS</span>
+                    <i class="fas fa-external-link-alt ml-2"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card glass-effect rounded-xl overflow-hidden transition-all duration-500">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Project 1" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Neon Genesis</h3>
+                                <p class="text-sm text-gray-300">3D Motion Graphics</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-primary font-mono">2023</span>
+                            <a href="#" class="text-primary hover:text-secondary transition-all duration-300">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card glass-effect rounded-xl overflow-hidden transition-all duration-500">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1639762681057-408e52192e55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Project 2" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Quantum Interface</h3>
+                                <p class="text-sm text-gray-300">UI/UX Design</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-primary font-mono">2023</span>
+                            <a href="#" class="text-primary hover:text-secondary transition-all duration-300">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card glass-effect rounded-xl overflow-hidden transition-all duration-500">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Project 3" 
+                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+                            <div>
+                                <h3 class="text-xl font-bold mb-2">Cyber Sync</h3>
+                                <p class="text-sm text-gray-300">Brand Identity</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs text-primary font-mono">2022</span>
+                            <a href="#" class="text-primary hover:text-secondary transition-all duration-300">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative bg-darker">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-8">BEHIND THE <span class="gradient-text">DESIGNS</span></h2>
+                    <p class="text-lg text-gray-300 mb-6">
+                        I'm Aqlux, a forward-thinking graphic designer specializing in creating visually stunning and technically innovative designs. With over 8 years of experience in the industry, I've developed a unique approach that combines artistic intuition with computational design.
+                    </p>
+                    <p class="text-lg text-gray-300 mb-8">
+                        My work focuses on pushing boundaries through experimentation with new technologies like generative design, 3D rendering, and augmented reality experiences.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="border border-primary text-primary font-bold px-8 py-3 rounded-full hover:bg-primary hover:bg-opacity-10 transition-all duration-300">
+                            <i class="fas fa-download mr-2"></i> Download CV
+                        </a>
+                        <a href="#contact" class="bg-primary text-dark font-bold px-8 py-3 rounded-full hover:bg-opacity-90 transition-all duration-300">
+                            Get in Touch
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="relative max-w-md mx-auto">
+                        <div class="absolute -inset-4 bg-gradient-to-br from-primary to-secondary rounded-full opacity-50 blur-xl animate-pulse-slow"></div>
+                        <div class="relative bg-dark rounded-full overflow-hidden h-96 w-96 flex items-center justify-center">
+                            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80')] bg-cover bg-center opacity-20"></div>
+                            <div class="relative z-10 text-center p-8">
+                                <div class="text-5xl font-bold gradient-text mb-4">AQLUX</div>
+                                <div class="text-xl font-light text-gray-400">FUTURISTIC DESIGN</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-bold mb-20 text-center">DESIGN <span class="gradient-text">PROCESS</span></h2>
+            
+            <div class="relative">
+                <div class="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary to-secondary -ml-px"></div>
+                
+                <!-- Step 1 -->
+                <div class="mb-16 flex flex-col md:flex-row justify-center items-center">
+                    <div class="md:w-1/2 md:pl-16 order-2 md:order-1">
+                        <h3 class="text-2xl font-bold mb-4">01. DISCOVERY</h3>
+                        <p class="text-gray-300 mb-4">
+                            Deep dive into client needs and project objectives through structured interviews and research.
+                        </p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Client Interview Sessions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Market & Competitor Analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Technical Feasibility Study</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 text-center order-1 md:order-2 mb-8 md:mb-0">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-dark text-2xl font-bold relative">
+                            1
+                            <div class="absolute inset-0 rounded-full border-4 border-primary/20 animate-ping-slow"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="mb-16 flex flex-col md:flex-row justify-center items-center">
+                    <div class="md:w-1/2 text-center mb-8 md:mb-0">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-dark text-2xl font-bold relative">
+                            2
+                            <div class="absolute inset-0 rounded-full border-4 border-primary/20 animate-ping-slow"></div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 md:pr-16">
+                        <h3 class="text-2xl font-bold mb-4">02. CONCEPTUALIZATION</h3>
+                        <p class="text-gray-300 mb-4">
+                            Transform insights into tangible design directions through rapid ideation and prototyping.
+                        </p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Mood Board Creation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Generative Design Exploration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Low-Fidelity Prototypes</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="mb-16 flex flex-col md:flex-row justify-center items-center">
+                    <div class="md:w-1/2 md:pl-16 order-2 md:order-1">
+                        <h3 class="text-2xl font-bold mb-4">03. EXECUTION</h3>
+                        <p class="text-gray-300 mb-4">
+                            High-fidelity design development with cutting-edge tools and iterative refinement.
+                        </p>
+                        <ul class="text-gray-400 text-sm space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>3D Modeling & Rendering</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Motion Design Implementation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-primary mr-2 mt-1"></i>
+                                <span>Technical Documentation</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="md:w-1/2 text-center order-1 md:order-2 mb-8 md:mb-0">
+                        <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary text-dark text-2xl font-bold relative">
+                            3
+                            <div class="absolute inset-0 rounded-full border-4 border-primary/20 animate-ping-slow"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-darker">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="py-8 glass-effect rounded-xl">
+                    <div class="text-5xl font-bold gradient-text mb-2" id="stat1">0</div>
+                    <div class="text-gray-400 uppercase text-sm tracking-widest">Projects</div>
+                </div>
+                <div class="py-8 glass-effect rounded-xl">
+                    <div class="text-5xl font-bold gradient-text mb-2" id="stat2">0</div>
+                    <div class="text-gray-400 uppercase text-sm tracking-widest">Clients</div>
+                </div>
+                <div class="py-8 glass-effect rounded-xl">
+                    <div class="text-5xl font-bold gradient-text mb-2" id="stat3">0</div>
+                    <div class="text-gray-400 uppercase text-sm tracking-widest">Awards</div>
+                </div>
+                <div class="py-8 glass-effect rounded-xl">
+                    <div class="text-5xl font-bold gradient-text mb-2" id="stat4">0</div>
+                    <div class="text-gray-400 uppercase text-sm tracking-widest">Years</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-6xl font-bold mb-20 text-center">CLIENT <span class="gradient-text">TESTIMONIALS</span></h2>
+            
+            <div class="relative max-w-4xl mx-auto">
+                <div class="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-2xl opacity-20 blur-xl"></div>
+                <div class="relative bg-dark rounded-2xl overflow-hidden p-12 glass-effect">
+                    <div class="mb-8">
+                        <div class="text-5xl text-primary mb-4 opacity-50">“</div>
+                        <p class="text-xl text-gray-300 leading-relaxed">
+                            Aqlux transformed our brand identity with a visionary approach that perfectly captured our forward-thinking ethos. Their ability to translate complex technical concepts into elegant visual experiences is unparalleled in the industry.
+                        </p>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" 
+                                 alt="Client" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="font-bold">Sarah Johnson</div>
+                            <div class="text-sm text-gray-400">Creative Director, TechVision</div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mt-8">
+                        <button class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <i class="fas fa-arrow-left text-xl"></i>
+                        </button>
+                        <div class="flex space-x-2">
+                            <span class="w-3 h-3 bg-primary rounded-full"></span>
+                            <span class="w-3 h-3 bg-gray-700 rounded-full"></span>
+                            <span class="w-3 h-3 bg-gray-700 rounded-full"></span>
+                        </div>
+                        <button class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <i class="fas fa-arrow-right text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative bg-darker">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-8">LET'S <span class="gradient-text">CONNECT</span></h2>
+                    <p class="text-lg text-gray-300 mb-12">
+                        Interested in collaborating or want to discuss a potential project? Get in touch and let's create something extraordinary together.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-primary mr-4 mt-1">
+                                <i class="fas fa-envelope text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Email</h4>
+                                <a href="mailto:hello@aqlux.design" class="text-gray-400 hover:text-primary transition-colors duration-300">hello@aqlux.design</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary mr-4 mt-1">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Location</h4>
+                                <p class="text-gray-400">Los Angeles, CA • Remote Worldwide</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="text-primary mr-4 mt-1">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold mb-1">Phone</h4>
+                                <a href="tel:+12135551234" class="text-gray-400 hover:text-primary transition-colors duration-300">+1 (213) 555-1234</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4 mt-12">
+                        <a href="#" class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-dark transition-all duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-dark transition-all duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-dark transition-all duration-300">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full border border-primary text-primary flex items-center justify-center hover:bg-primary hover:text-dark transition-all duration-300">
+                            <i class="fab fa-behance"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="glass-effect rounded-xl p-8">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-300 text-sm font-bold mb-2">Name</label>
+                            <input type="text" id="name" class="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300" placeholder="Your name">
+                        </div>
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" class="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300" placeholder="your.email@example.com">
+                        </div>
+                        <div class="mb-6">
+                            <label for="project" class="block text-gray-300 text-sm font-bold mb-2">Project Type</label>
+                            <select id="project" class="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 appearance-none">
+                                <option value="" disabled selected>Select project type</option>
+                                <option value="branding">Brand Identity</option>
+                                <option value="3d">3D Design</option>
+                                <option value="motion">Motion Graphics</option>
+                                <option value="uiux">UI/UX Design</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-300 text-sm font-bold mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300" placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-dark font-bold px-8 py-4 rounded-lg hover:bg-opacity-90 transition-all duration-300 flex items-center justify-center">
+                            <span>Send Message</span>
+                            <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-2xl font-bold gradient-text mb-6 md:mb-0 select-none">AQL<span class="font-mono">//</span>UX</div>
+                <div class="text-sm text-gray-400 mb-6 md:mb-0 text-center">
+                    &copy; 2023 Aqlux Blueprints. All rights reserved.
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Animate stats counter
+        function animateCounter(elementId, target, duration = 2000) {
+            const element = document.getElementById(elementId);
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    clearInterval(timer);
+                    current = target;
+                }
+                element.textContent = Math.floor(current);
+            }, 16);
+        }
+
+        // Initialize counters when stats section is in view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter('stat1', 87);
+                    animateCounter('stat2', 42);
+                    animateCounter('stat3', 9);
+                    animateCounter('stat4', 8);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.getElementById('stat1').parentElement.parentElement.parentElement;
+        observer.observe(statsSection);
+
+        // Cursor trail effect
+        const cursorTrail = document.getElementById('cursor-trail');
+        let mouseX = 0, mouseY = 0;
+        let trailX = 0, trailY = 0;
+        let visible = false;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            
+            if (!visible) {
+                cursorTrail.style.opacity = '0.7';
+                visible = true;
+            }
+        });
+
+        function animateCursor() {
+            trailX += (mouseX - trailX) / 10;
+            trailY += (mouseY - trailY) / 10;
+            
+            cursorTrail.style.left = `${trailX}px`;
+            cursorTrail.style.top = `${trailY}px`;
+            
+            requestAnimationFrame(animateCursor);
+        }
+
+        animateCursor();
+
+        // Hide cursor when not moving
+        let timeout;
+        document.addEventListener('mousemove', () => {
+            clearTimeout(timeout);
+            visible = true;
+            cursorTrail.style.opacity = '0.7';
+            
+            timeout = setTimeout(() => {
+                visible = false;
+                cursorTrail.style.opacity = '0';
+            }, 1000);
+        });
+
+        // Create floating particles
+        const particlesContainer = document.getElementById('particles');
+
+        function createParticle() {
+            const particle = document.createElement('div');
+            const size = Math.random() * 5 + 1;
+            const posX = Math.random() * window.innerWidth;
+            const posY = Math.random() * window.innerHeight;
+            const duration = Math.random() * 20 + 10;
+            const delay = Math.random() * 5;
+            const opacity = Math.random() * 0.2 + 0.05;
+            const color = Math.random() > 0.5 ? 'rgba(10, 255, 157, 0.1)' : 'rgba(0, 225, 255, 0.1)';
+            
+            particle.style.position = 'absolute';
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.backgroundColor = color;
+            particle.style.borderRadius = '50%';
+            particle.style.left = `${posX}px`;
+            particle.style.top = `${posY}px`;
+            particle.style.pointerEvents = 'none';
+            particle.style.animation = `float ${duration}s ease-in-out infinite`;
+            particle.style.animationDelay = `${delay}s`;
+            particle.style.opacity = opacity;
+            
+            particlesContainer.appendChild(particle);
+        }
+
+        // Create 50 particles
+        for (let i = 0; i < 50; i++) {
+            createParticle();
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Add hover effect to gradient text
+        const gradientTexts = document.querySelectorAll('.gradient-text');
+        gradientTexts.forEach(text => {
+            text.addEventListener('mouseover', () => {
+                text.style.animation = 'text-glow 2s ease-in-out infinite alternate';
+            });
+            text.addEventListener('mouseout', () => {
+                text.style.animation = '';
+            });
+        });
+    </script>
+ </body>
+</html>
