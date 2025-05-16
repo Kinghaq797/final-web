@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqlux blueprints| branding Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Tomorrow:wght@300;500;700&display=swap');
+        
+        :root {
+            --neon-blue: #00f7ff;
+            --neon-purple: #a100ff;
+            --deep-space: #0a0a1a;
+        }
+        
+        body {
+            font-family: 'Tomorrow', sans-serif;
+            background-color: var(--deep-space);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        .orbitron {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .photo-tile {
+            transition: all 0.3s ease;
+            background: rgba(20, 20, 50, 0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        .photo-tile:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(161, 0, 255, 0.3);
+        }
+        
+        .photo-tile::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0, 247, 255, 0.1), rgba(161, 0, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .photo-tile:hover::after {
+            opacity: 1;
+        }
+        
+        .glowing-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .glowing-dot {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            background-color: var(--neon-blue);
+            box-shadow: 0 0 10px 2px var(--neon-blue);
+            animation: float linear infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(30px);
+                opacity: 0;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(0, 247, 255, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(0, 247, 255, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 247, 255, 0);
+            }
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+ </head>
+ <body>
+    <!-- Animated background dots -->
+    <div class="glowing-dots fixed top-0 left-0 -z-10">
+        <!-- Dots will be added dynamically via JS -->
+    </div>
+    
+    <!-- Main container -->
+    <div class="container mx-auto px-4 py-16">
+        <!-- Header -->
+        <header class="flex flex-col items-center mb-16">
+            <div class="mb-8 relative">
+                <h1 class="orbitron text-5xl md:text-6xl font-bold text-center mb-4 gradient-text">
+                    CYBER-SYNC
+                </h1>
+                <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-[2px] w-32 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+            </div>
+            <p class="text-lg text-gray-400 max-w-2xl text-center mb-8">
+                Immerse yourself in a collection of cutting-edge visuals from Aqlux.
+            </p>
+        </header>
+        
+        <!-- Gallery grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Photo 1 -->
+            <div class="photo-tile group">
+                <div class="relative overflow-hidden aspect-square">
+                    <img src="asset/brand-images/IMG-20250125-WA0021.jpg" 
+                         alt="Bali-Kizz"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <div class="orbitron text-xl font-bold">BALI-KIZZ Beauty Hair</div>
+                            <div class="text-sm text-gray-300">2023</div>
+                            <div class="flex mt-4">
+                                <span class="text-xs bg-cyan-500/20 text-cyan-400 px-3 py-1 rounded-full mr-2">Classical</span>
+                                <span class="text-xs bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full">mockup</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo 2 -->
+            <div class="photo-tile group">
+                <div class="relative overflow-hidden aspect-square">
+                    <img src="asset/brand-images/IMG-20250211-WA0055.jpg" 
+                         alt="ZAL's"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <div class="orbitron text-xl font-bold">ZAL's</div>
+                            <div class="text-sm text-gray-300">2024</div>
+                            <div class="flex mt-4">
+                                <span class="text-xs bg-pink-500/20 text-pink-400 px-3 py-1 rounded-full mr-2">branding</span>
+                                <span class="text-xs bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full">channel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo 3 -->
+            <div class="photo-tile group">
+                <div class="relative overflow-hidden aspect-square">
+                    <img src="asset/brand-images/IMG-20250411-WA0042.jpg" 
+                         alt="Aqlux blueprints"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <div class="orbitron text-xl font-bold">Aqlux blueprints</div>
+                            <div class="text-sm text-gray-300">2023</div>
+                            <div class="flex mt-4">
+                                <span class="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full mr-2">Personal</span>
+                                <span class="text-xs bg-green-500/20 text-green-400 px-3 py-1 rounded-full">Logo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Photo 4 -->
+            <div class="photo-tile group">
+                <div class="relative overflow-hidden aspect-square">
+                    <img src="asset/brand-images/IMG-20250411-WA0071.jpg" 
+                         alt="Turah's collection"
+                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <div>
+                            <div class="orbitron text-xl font-bold">Turah's collection</div>
+                            <div class="text-sm text-gray-300">2025</div>
+                            <div class="flex mt-4">
+                                <span class="text-xs bg-gray-500/20 text-gray-400 px-3 py-1 rounded-full mr-2">Logo</span>
+                                <span class="text-xs bg-red-500/20 text-red-400 px-3 py-1 rounded-full">mockup</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        // Create glowing dots for background
+        const dotsContainer = document.querySelector('.glowing-dots');
+        for (let i = 0; i < 30; i++) {
+            const dot = document.createElement('div');
+            dot.classList.add('glowing-dot');
+            
+            // Random position
+            dot.style.left = Math.random() * 100 + '%';
+            dot.style.top = Math.random() * 100 + '%';
+            
+            // Random size and animation duration
+            const size = 1 + Math.random() * 3;
+            dot.style.width = size + 'px';
+            dot.style.height = size + 'px';
+            dot.style.animationDuration = 15 + Math.random() * 30 + 's';
+            dot.style.animationDelay = Math.random() * 5 + 's';
+            
+            dotsContainer.appendChild(dot);
+        }
+        
+        // Add tilt effect to photo tiles
+        document.querySelectorAll('.photo-tile').forEach(tile => {
+            tile.addEventListener('mousemove', (e) => {
+                const x = e.clientX - tile.getBoundingClientRect().left;
+                const y = e.clientY - tile.getBoundingClientRect().top;
+                
+                const centerX = tile.offsetWidth / 2;
+                const centerY = tile.offsetHeight / 2;
+                
+                const rotateX = ((y - centerY) / 20).toFixed(2);
+                const rotateY = ((centerX - x) / 20).toFixed(2);
+                
+                tile.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+            });
+            
+            tile.addEventListener('mouseleave', () => {
+                tile.style.transform = '';
+            });
+        });
+        
+        // Add theme toggle
+        const themeToggle = document.createElement('div');
+        themeToggle.className = 'fixed top-6 left-6 w-12 h-6 bg-gray-800 rounded-full cursor-pointer flex items-center p-1 z-50 group';
+        themeToggle.innerHTML = `
+            <div class="w-4 h-4 rounded-full bg-cyan-400 shadow-[0_0_6px_1px_rgba(0,247,255,0.6)] transform transition-transform duration-500"></div>
+        `;
+        document.body.appendChild(themeToggle);
+        
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+            const isLight = document.body.classList.contains('light-theme');
+            
+            if (isLight) {
+                document.body.style.backgroundColor = '#f0f0f5';
+                document.body.style.color = '#111';
+                themeToggle.querySelector('div').style.transform = 'translateX(24px)';
+                themeToggle.querySelector('div').classList.replace('bg-cyan-400', 'bg-purple-500');
+                themeToggle.querySelector('div').classList.replace('shadow-[0_0_6px_1px_rgba(0,247,255,0.6)]', 'shadow-[0_0_6px_1px_rgba(161,0,255,0.6)]');
+            } else {
+                document.body.style.backgroundColor = '';
+                document.body.style.color = '';
+                themeToggle.querySelector('div').style.transform = '';
+                themeToggle.querySelector('div').classList.replace('bg-purple-500', 'bg-cyan-400');
+                themeToggle.querySelector('div').classList.replace('shadow-[0_0_6px_1px_rgba(161,0,255,0.6)]', 'shadow-[0_0_6px_1px_rgba(0,247,255,0.6)]');
+            }
+        });
+    </script>
+ </body>
