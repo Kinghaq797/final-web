@@ -161,11 +161,9 @@
         <div class="container mx-auto px-6">
             <h2 class="text-center text-gray-400 uppercase text-sm tracking-widest mb-8">COLLABORATED WITH</h2>
             <div class="flex flex-wrap justify-center items-center gap-12 opacity-80">
-                <div class="text-3xl font-bold gradient-text">NVIDIA</div>
-                <div class="text-3xl font-bold gradient-text">ADOBE</div>
-                <div class="text-3xl font-bold gradient-text">SONY</div>
-                <div class="text-3xl font-bold gradient-text">NETFLIX</div>
-                <div class="text-3xl font-bold gradient-text">SPOTIFY</div>
+                <div class="text-3xl font-bold gradient-text">DISTINCT-AXIS</div>
+                <div class="text-3xl font-bold gradient-text">ZAL'S</div>
+                <div class="text-3xl font-bold gradient-text">TURAH'S COLLECTIONS</div>
             </div>
         </div>
     </section>
@@ -178,10 +176,6 @@
                     <h2 class="text-4xl md:text-6xl font-bold mb-4">SELECTED <span class="gradient-text">WORKS</span></h2>
                     <p class="max-w-xl text-gray-400">A curated collection of projects that showcase my design philosophy and technical approach.</p>
                 </div>
-                <a href="#" class="hidden md:flex items-center text-primary hover:text-secondary transition-all duration-300">
-                    <span>VIEW ALL PROJECTS</span>
-                    <i class="fas fa-external-link-alt ml-2"></i>
-                </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -264,7 +258,7 @@
                 <div class="md:w-1/2">
                     <h2 class="text-4xl md:text-6xl font-bold mb-8">BEHIND THE <span class="gradient-text">DESIGNS</span></h2>
                     <p class="text-lg text-gray-300 mb-6">
-                        I'm Aqlux, a forward-thinking graphic designer specializing in creating visually stunning and technically innovative designs. With over 8 years of experience in the industry, I've developed a unique approach that combines artistic intuition with computational design.
+                        I'm Aqlux, a forward-thinking graphic designer specializing in creating visually stunning and technically innovative designs. With over 5 years of experience in the industry, I've developed a unique approach that combines artistic intuition with computational design.
                     </p>
                     <p class="text-lg text-gray-300 mb-8">
                         My work focuses on pushing boundaries through experimentation with new technologies like generative design, 3D rendering, and augmented reality experiences.
@@ -285,7 +279,7 @@
                             <div class="absolute inset-0 bg-[url('https://kinghaq797.github.io/potfolio-2.0.1/assets/img/my-profile-img.jpg')] bg-cover bg-center opacity-20"></div>
                             <div class="relative z-10 text-center p-8">
                                 <div class="text-5xl font-bold gradient-text mb-4">AQLUX</div>
-                                <div class="text-xl font-light text-gray-400">FUTURISTIC DESIGN</div>
+                                <div class="text-xl font-light text-gray-400">BLUEPRINTS</div>
                             </div>
                         </div>
                     </div>
@@ -341,22 +335,22 @@
                         </div>
                     </div>
                     <div class="md:w-1/2 md:pr-16">
-                        <h3 class="text-2xl font-bold mb-4">02. CONCEPTUALIZATION</h3>
+                        <h3 class="text-2xl font-bold mb-4">       02. CONCEPTUALIZATION</h3>
                         <p class="text-gray-300 mb-4">
-                            Transform insights into tangible design directions through rapid ideation and prototyping.
+                                      Transform insights into tangible design directions through rapid ideation and prototyping.
                         </p>
                         <ul class="text-gray-400 text-sm space-y-2">
                             <li class="flex items-start">
                                 <i class="fas fa-check text-primary mr-2 mt-1"></i>
-                                <span>Mood Board Creation</span>
+                                <span>     Mood Board Creation</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-primary mr-2 mt-1"></i>
-                                <span>Generative Design Exploration</span>
+                                <span>     Generative Design Exploration</span>
                             </li>
                             <li class="flex items-start">
                                 <i class="fas fa-check text-primary mr-2 mt-1"></i>
-                                <span>Low-Fidelity Prototypes</span>
+                                <span>     Low-Fidelity Prototypes</span>
                             </li>
                         </ul>
                     </div>
@@ -400,19 +394,24 @@
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
                 <div class="py-8 glass-effect rounded-xl">
-                    <div class="text-5xl font-bold gradient-text mb-2" id="stat1">0</div>
+                    <div class="text-5xl font-bold gradient-text mb-2" id="stat1">
+                         0
+                    </div>
                     <div class="text-gray-400 uppercase text-sm tracking-widest">Projects</div>
                 </div>
                 <div class="py-8 glass-effect rounded-xl">
-                    <div class="text-5xl font-bold gradient-text mb-2" id="stat2">0</div>
+                    <div class="text-5xl font-bold gradient-text mb-2" id="stat2">0
+                    </div>
                     <div class="text-gray-400 uppercase text-sm tracking-widest">Clients</div>
                 </div>
                 <div class="py-8 glass-effect rounded-xl">
-                    <div class="text-5xl font-bold gradient-text mb-2" id="stat3">0</div>
+                    <div class="text-5xl font-bold gradient-text mb-2" id="stat3">0
+                    </div>
                     <div class="text-gray-400 uppercase text-sm tracking-widest">Awards</div>
                 </div>
                 <div class="py-8 glass-effect rounded-xl">
-                    <div class="text-5xl font-bold gradient-text mb-2" id="stat4">0</div>
+                    <div class="text-5xl font-bold gradient-text mb-2" id="stat4">0
+                    </div>
                     <div class="text-gray-400 uppercase text-sm tracking-widest">Years</div>
                 </div>
             </div>
@@ -591,10 +590,10 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateCounter('stat1', 87);
-                    animateCounter('stat2', 42);
-                    animateCounter('stat3', 9);
-                    animateCounter('stat4', 8);
+                    animateCounter('stat1', 50);
+                    animateCounter('stat2', 30);
+                    animateCounter('stat3', 3);
+                    animateCounter('stat4', 5);
                 }
             });
         }, { threshold: 0.5 });
